@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const ToyCard = ({singleCard}) => {
     return (
         <div>
-            <div className="card bg-base-300 w-96 shadow-sm">
+            <div className="card bg-base-300 w-[250px] md:w-[300px] h-96 shadow-sm p-4">
                 <figure>
                     <img
                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -21,7 +21,7 @@ const ToyCard = ({singleCard}) => {
                         <div className="badge badge-outline bg-teal-300">Price {singleCard.price} $</div>
                         <div className="badge badge-outline bg-red-300">Rating {singleCard.rating} <FaStar></FaStar></div>
                     </div>
-                    <Link className='flex justify-center btn bg-blue-500' to='/toy-details'>View More</Link>
+                    <Link to={`/toy-details/${singleCard.toyId}`} className='flex justify-center btn bg-blue-500' >View More</Link>
                 </div>
             </div>
         </div>
