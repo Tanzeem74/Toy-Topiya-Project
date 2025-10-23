@@ -12,10 +12,10 @@ const Footer = () => {
                     <a className="link link-hover">Advertisement</a>
                 </nav>
                 <nav>
-                    <span class="footer-title">Legal</span>
-                    <a href="" class="link link-hover">Terms & Conditions</a>
-                    <a href="" class="link link-hover">Privacy Policy</a>
-                    <a href="" class="link link-hover">Cookie Policy</a>
+                    <span className="footer-title">Legal</span>
+                    <a href="" className="link link-hover">Terms & Conditions</a>
+                    <a href="" className="link link-hover">Privacy Policy</a>
+                    <a href="" className="link link-hover">Cookie Policy</a>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Social</h6>

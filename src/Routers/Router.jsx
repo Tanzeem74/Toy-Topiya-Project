@@ -4,11 +4,19 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import ErrorPage from "../Pages/ErrorPage";
+import Home from "../Pages/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+    children:[
+      {
+        path:'/',
+        element: <Home></Home> ,
+        loader:()=>fetch('toysData.json')
+      }
+    ]
   },
    {
             path: '/auth',
