@@ -3,6 +3,7 @@ import HomeLayout from "../layouts/HomeLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         },
   {
     path: "/*",
-    element: <h2>Error 404</h2>,
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 
