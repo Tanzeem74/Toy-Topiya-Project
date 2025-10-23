@@ -8,7 +8,8 @@ const ToyCard = ({singleCard}) => {
             <div className="card bg-base-300 w-[250px] md:w-[300px] h-96 shadow-sm p-4">
                 <figure>
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        className='w-full h-full'
+                        src={singleCard.pictureURL}
                         alt="Shoes" />
                 </figure>
                 <div className="card-body">

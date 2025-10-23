@@ -1,8 +1,9 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const TryNow = () => {
     const handleTryNow = () => {
-        alert('Submitted');
+        toast('Submitted');
     }
     return (
         <div>
