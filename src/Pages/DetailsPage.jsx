@@ -12,8 +12,8 @@ const DetailsPage = () => {
         toast('Purchased Successfully');
     }
     return (
-        <div className=''>
-            <div className="hero bg-base-200 min-h-screen">
+        <div className='bg-linear-to-r from-sky-300 via-indigo-300 to-purple-300'>
+            <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
                     <img
                         src={detail.pictureURL}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
+
 const TryNow = () => {
     const handleTryNow = () => {
         toast('Submitted');
@@ -16,7 +17,7 @@ const TryNow = () => {
                             <input type="email" className="input" placeholder="Email" required />
                             <label className="label">Name</label>
                             <input type="name" className="input" placeholder="Name" required />
-                            <button type='submit' className="btn btn-neutral mt-4">Try now</button>
+                            <button onClick={handleTryNow} className="btn btn-neutral mt-4">Try now</button>
                         </fieldset>
                     </form>
                 </div>

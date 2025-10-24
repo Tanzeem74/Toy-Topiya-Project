@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 
 const HomeLayout = () => {
     return (
-        <div>
+        <div className='bg-linear-to-r from-sky-300 via-indigo-300 to-purple-300'>
             <header>
                 <Navbar></Navbar>
             </header>

@@ -20,6 +20,8 @@ const Register = () => {
 
                         <label className="label">Password</label>
                         <input name='password' type="password" className="input" placeholder="Password" required />
+
+                        
                         <button type='submit' className="btn btn-neutral mt-4">Register</button>
                         <p className='text-center'>or</p>
                         <button className='btn btn-outline btn-secondary w-full'> <FcGoogle size={25} /> Signup with Google</button>
