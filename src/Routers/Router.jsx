@@ -17,19 +17,19 @@ const router = createBrowserRouter([
       {
         path:'/',
         element: <Home></Home> ,
-        loader:()=>fetch('toysData.json'),
+        loader:()=>fetch('/toysData.json'),
         hydrateFallbackElement:<Loading></Loading>
       },
       {
         path:'/all-toys',
         element:<AllToys></AllToys>,
-        loader:()=>fetch('toysData.json'),
+        loader:()=>fetch('/toysData.json'),
         hydrateFallbackElement:<Loading></Loading>
       },
       {
         path:'/toy-details/:toyId',
         element:<DetailsPage></DetailsPage>,
-        loader:()=>fetch('toysData.json'),
+        loader:()=>fetch('/toysData.json'),
         hydrateFallbackElement:<Loading></Loading>
       }
     ]

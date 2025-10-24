@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
 
 const Login = () => {
+    useEffect(() => {
+        document.title = "Login";
+    }, []);
     return (
         <div className='flex justify-center min-h-screen items-center'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
@@ -16,7 +19,7 @@ const Login = () => {
                         <div><a className="link link-hover">Forgot password?</a></div>
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                         <p className='text-center'>or</p>
-                        <button className='btn btn-outline btn-secondary w-full'> <FcGoogle size={25}/> Login with Google</button>
+                        <button className='btn btn-outline btn-secondary w-full'> <FcGoogle size={25} /> Login with Google</button>
                         <p className='font-semibold text-center mt-4'>Don't have an account? <Link className='text-red-500' to='/auth/register' >Register</Link> </p>
                     </fieldset>
                 </form>

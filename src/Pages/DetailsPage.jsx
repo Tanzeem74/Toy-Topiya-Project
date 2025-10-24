@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useLoaderData, useParams } from 'react-router';
 import { toast } from 'react-toastify';
@@ -8,9 +8,12 @@ const DetailsPage = () => {
     const { toyId } = useParams();
     const data = useLoaderData();
     const detail = data.find(single => String(single.toyId) === String(toyId));
-    const handle=()=>{
+    const handle = () => {
         toast('Purchased Successfully');
     }
+    useEffect(() => {
+        document.title = "Toy-Details";
+    }, []);
     return (
         <div className='bg-linear-to-r from-sky-300 via-indigo-300 to-purple-300'>
             <div className="hero min-h-screen">
