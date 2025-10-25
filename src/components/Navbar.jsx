@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import userImg from '../assets/user.png';
+import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+    const { user, logOut } = use(AuthContext);
+    const handleLogout = () => {
+        logOut().then(() => {
+            // Sign-out successful.\
+            toast('You Logged Out');
+        }).catch((error) => {
+            // An error happened.
+            console.log(error);
+        });
+    }
     const links = <>
-        <NavLink to='/'><li className='mr-4 text-black'>Home</li></NavLink>
-        <NavLink to='/all-toys'><li className='mr-4 text-black'>Explore Items</li></NavLink>
-        <NavLink to='/profile'><li className='mr-4 text-black'>My Profile</li></NavLink>
+        <NavLink to='/'><li className='mr-4 text-black font-semibold'>Home</li></NavLink>
+        <NavLink to='/all-toys'><li className='mr-4 text-black font-semibold'>Explore Items</li></NavLink>
+        <NavLink to='/profile'><li className='mr-4 text-black font-semibold'>My Profile</li></NavLink>
     </>
     return (
         <div className=''>
@@ -21,15 +34,18 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/' className="text-xl text-secondary">ToyTopia</Link>
+                    <Link to='/' className="text-xl text-secondary font-bold">ToyTopia</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 gap-5">
                         {links}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/auth/login' className="btn bg-primary text-white">Login</Link>
+                    <div className='flex gap-3 items-center'>
+                        <Link to='/profile'><img className='rounded-full h-8 w-8' src={`${user? user?.photoURL:userImg}`} alt="user" /></Link>
+                        {user ? <button onClick={handleLogout} className="btn bg-secondary text-white">Logout</button> : <Link to='/auth/login' className="btn bg-primary text-white">Login</Link>}
+                    </div>
                 </div>
             </div>
         </div>

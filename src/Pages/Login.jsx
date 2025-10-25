@@ -1,44 +1,90 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
-import { Link } from 'react-router';
-
+import { Link, useLocation, useNavigate } from 'react-router';
+import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 const Login = () => {
     useEffect(() => {
-        document.title = "Login";
+        document.title = "Login - ToyTopia";
     }, []);
     const [show, setShow] = useState(false);
+    const [error, setError] = useState('');
     const handleTogglePass = (e) => {
         e.preventDefault();
         setShow(!show);
     }
+    const { logIn, loginWithGoogle } = use(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        //console.log(email, password);
+        logIn(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                navigate(`${location ? location.state : '/'}`)
+                toast('Login Successfully');
+            })
+            .catch(() => {
+                setError('Invalid Email or Password');
+                toast('Invalid Email or Password')
+            });
+
+    }
+    // const emailRef=useRef();
+
+    const handleLoginGoogle = () => {
+        loginWithGoogle()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                navigate(`${location ? location.state : '/'}`)
+                toast('Login Successfully');
+            })
+            .catch(() => {
+                toast('Invalid Try');
+            })
+    }
+
+    // const handleForgetPassword=()=>{
+    //     const email=emailRef.current.value;
+    //     sendPasswordResetEmail(auth,email)
+    //     .then(()=>{
+    //         toast('Check Your Email Address');
+    //     })
+    // }
     return (
         <div className='flex justify-center min-h-screen items-center'>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
+            <div className="card bg-linear-to-r from-blue-400 via-blue-500 to-indigo-600 w-full max-w-sm shrink-0 shadow-2xl py-5">
                 <h2 className='font-semibold text-2xl text-center'>Login to your account</h2>
-                <form className="card-body">
+                <form onSubmit={handleLogin} className="card-body">
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
                         <input name='email' type="email" className="input" placeholder="Email" required />
 
                         <label className="label">Password</label>
                         <div className='relative'>
-                            <label className="label">Password</label>
                             <input name='password'
                                 type={show ? 'text' : 'password'}
                                 className="input" placeholder="Password" required />
                             <button
                                 onClick={handleTogglePass}
-                                className='btn btn-sm absolute top-6 right-5'>
+                                className='btn btn-sm absolute top-1 right-5'>
                                 {show ? <IoEyeOff /> : <IoEye />}
                             </button>
                         </div>
 
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <Link to='/auth/forget-pass' ><a className="link link-hover">Forgot password?</a></Link>
+
+                        {error && <p className='text-red-500 text-xs font-semibold'>{error}</p>}
                         <button type='submit' className="btn btn-neutral mt-4">Login</button>
                         <p className='text-center'>or</p>
-                        <button className='btn btn-outline btn-secondary w-full'> <FcGoogle size={25} /> Login with Google</button>
-                        <p className='font-semibold text-center mt-4'>Don't have an account? <Link className='text-red-500' to='/auth/register' >Register</Link> </p>
+                        <button onClick={handleLoginGoogle} className='btn btn-outline border-0 w-full bg-base-100'> <FcGoogle size={25} /> Login with Google</button>
+                        <p className='font-semibold text-center mt-4'>Don't have an account? <Link className='text-red-500 font-semibold' to='/auth/register' >Register</Link> </p>
                     </fieldset>
                 </form>
             </div>

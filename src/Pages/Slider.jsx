@@ -17,7 +17,7 @@ const Slider = () => {
         className="rounded-2xl shadow-2xl"
       >
         <SwiperSlide>
-          <div className="hero min-h-[400px] bg-linear-to-r from-pink-300 via-yellow-200 to-blue-300 flex justify-center items-center">
+          <div className="hero min-h-[300px] sm:min-h-[400px] bg-linear-to-r from-pink-300 via-yellow-200 to-blue-300 flex justify-center items-center rounded-2xl">
             <div className="text-center text-neutral-content">
               <h1 className="text-5xl font-bold text-white">
                 Welcome to ToyTopia!
@@ -29,7 +29,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="hero min-h-[400px] bg-linear-to-r from-blue-300 via-indigo-200 to-pink-200 flex justify-center items-center">
+          <div className="hero min-h-[300px] sm:min-h-[400px] bg-linear-to-r from-pink-300 via-yellow-200 to-blue-300 flex justify-center items-center rounded-2xl">
             <div className="text-center text-neutral-content">
               <h1 className="text-4xl font-bold text-white">
                 Explore Our Car Collection
@@ -41,7 +41,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="hero min-h-[400px] bg-linear-to-r from-green-300 via-lime-200 to-yellow-200 flex justify-center items-center">
+          <div className="hero min-h-[300px] sm:min-h-[400px] bg-linear-to-r from-pink-300 via-yellow-200 to-blue-300 flex justify-center items-center rounded-2xl">
             <div className="text-center text-neutral-content">
               <h1 className="text-4xl font-bold text-white">
                 Educational Toys
@@ -53,7 +53,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="hero min-h-[400px] bg-linear-to-r from-purple-300 via-pink-300 to-orange-200 flex justify-center items-center">
+          <div className="hero min-h-[300px] sm:min-h-[400px] bg-linear-to-r from-pink-300 via-yellow-200 to-blue-300 flex justify-center items-center rounded-2xl">
             <div className="text-center text-neutral-content">
               <h1 className="text-4xl font-bold text-white">
                 Action Figures & Heroes

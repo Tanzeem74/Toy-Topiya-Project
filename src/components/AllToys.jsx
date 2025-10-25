@@ -10,7 +10,7 @@ const AllToys = () => {
     return (
         <div className='container mx-auto m-4'>
             <h2 className='text-center font-semibold text-3xl m-2'>All Items</h2>
-            <div className='grid grid-cols-4 gap-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 place-items-center'>
                 {
                     data.map(toy => <ToyCard key={toy.id} singleCard={toy}></ToyCard>)
                 }
