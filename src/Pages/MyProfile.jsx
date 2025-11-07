@@ -8,9 +8,9 @@ const MyProfile = () => {
           logOut().then(() => {
               // Sign-out successful.\
               toast('You Logged Out');
-          }).catch((error) => {
+          }).catch(() => {
               // An error happened.
-              console.log(error);
+              //console.log(error);
           });
       }
 
