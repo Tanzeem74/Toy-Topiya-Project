@@ -9,7 +9,7 @@ Users can log in, browse toys, view detailed info, and leave feedback or ratings
 
 This project emphasizes **user engagement, responsiveness, and secure authentication**, creating a friendly experience for families.  
 
-**Live Site:** `https://toytopiya-project.web.app/`  
+**Live Site:** https://toytopiya-project.web.app/
 
 ---
 
